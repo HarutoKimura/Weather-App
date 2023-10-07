@@ -6,50 +6,29 @@ html, body {
     height: 100%;
   }
 
-  /* Vertical Alignment */
-.app-container {
-  display: flex;         /* Turns on flexbox for the container */
-  justify-content: center; /* Centers children along the horizontal axis */
-  align-items: center;     /* Centers children along the vertical axis */
-  height: 100vh;          /* 100% of the viewport height */
+  .app-container {
+    position: relative; /* So absolute positioning works within it */
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    height: 100vh; 
 }
 
-/* Horizontal alignment -> change to top left or top right*/ 
 .search-container {
-  display: flex;           /* Makes this container a flex container */
-  flex-direction: row;  /*Stacks children vertically */
-  align-items: center;     /* Horizontally centers the children */
-  gap: 10px;               /* Adds some space between the input and button */
-}
-
-.search-position {
-  display: flex;         /* Turns on flexbox for the container */
-  justify-content: row; /* Centers children along the horizontal axis */
-  align-items: left;     /* Centers children along the vertical axis */
-  height: 100vh;          /* 100% of the viewport height */
-}
-
-/*
-<div className="search-container">
-            <input value={city} placeholder='Search for a city' onChange={(e) => setCity(e.target.value)} />
-            <button onClick={handleSubmit}>Get Weather</button>
-        </div>
-*/
-
-/* Horizontal alignment */
-.display-container {
-  display: flex;           /* Makes this container a flex container */
-  flex-direction: row;  /*Stacks children vertically */
-  align-items: center;     /* Horizontally centers the children */
-  gap: 10px;               /* Adds some space between the input and button */
+    position: absolute; 
+    top: 10px;          /* Top padding */
+    left: 10px;         /* Left padding */
+    display: flex;      
+    flex-direction: row; 
+    gap: 10px;          
 }
 
 .weather-output {
-  color: white;
-  border: 2px solid white;  /* Add a white border */
-  padding: 15px;            /* Add some space inside the border */
-  border-radius: 10px;      /* Optional: To round the corners */
-  background-color: rgba(0, 0, 0, 0.5); /* Optional: Semi-transparent black background for better readability */
-  width: max-content;       /* Makes the container only as wide as the content, can adjust as needed */
-  margin: 20px auto;        /* Margin top and bottom for spacing, and auto for horizontal centering */
+    color: white;
+    border: 2px solid white;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: max-content;
+    margin: 20px auto;
 }

@@ -20,7 +20,7 @@ const App: React.FC = () => {
             <input value={city} placeholder='Search for a city' onChange={(e) => setCity(e.target.value)} />
             <button onClick={handleSubmit}>Get Weather</button>
         </div>
-        <div className="display-container">
+        <div>
             {weatherData && (
                 <div className='weather-output'>
                     <WeatherDisplay data={weatherData} />
