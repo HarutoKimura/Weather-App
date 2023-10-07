@@ -15,10 +15,12 @@ const App: React.FC = () => {
   };
 
   return (
-    <div>
-      <input value={city} onChange={(e) => setCity(e.target.value)} />
+    <div className="app-container">
+    <div className="search-container">
+      <input value={city} placeholder='Search for a city' onChange={(e) => setCity(e.target.value)} />
       <button onClick={handleSubmit}>Get Weather</button>
       {weatherData && <WeatherDisplay data={weatherData} />}
+    </div>
     </div>
   );
 }
