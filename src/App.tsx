@@ -15,14 +15,20 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="app-container">
-    <div className="search-container">
-      <input value={city} placeholder='Search for a city' onChange={(e) => setCity(e.target.value)} />
-      <button onClick={handleSubmit}>Get Weather</button>
-      {weatherData && <WeatherDisplay data={weatherData} />}
-    </div>
-    </div>
-  );
+      <div className="app-container">
+        <div className="search-container">
+            <input value={city} placeholder='Search for a city' onChange={(e) => setCity(e.target.value)} />
+            <button onClick={handleSubmit}>Get Weather</button>
+        </div>
+        <div className="display-container">
+            {weatherData && (
+                <div className='weather-output'>
+                    <WeatherDisplay data={weatherData} />
+                </div>
+            )}
+        </div>
+      </div>
+);
 }
 
 export default App;
