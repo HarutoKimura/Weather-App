@@ -1,24 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+// src/App.tsx
+import React, { useState } from 'react';
+import { fetchWeatherData } from './services/weatherService';
+import WeatherDisplay from './components/WeatherDisplay';
+import { WeatherData } from './types/WeatherData';
+import './components/WeatherDisplay.css';
 
-function App() {
+const App: React.FC = () => {
+  const [city, setCity] = useState('');
+  const [weatherData, setWeatherData] = useState<WeatherData | null>(null);
+
+  const handleSubmit = async () => {
+    const data = await fetchWeatherData(city);
+    setWeatherData(data);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <input value={city} onChange={(e) => setCity(e.target.value)} />
+      <button onClick={handleSubmit}>Get Weather</button>
+      {weatherData && <WeatherDisplay data={weatherData} />}
     </div>
   );
 }
