@@ -20,7 +20,14 @@ html, body {
     left: 10px;         /* Left padding */
     display: flex;      
     flex-direction: row; 
-    gap: 10px;          
+    gap: 0px;          
+}
+
+
+.search-button {
+    padding: 5px 10px;
+    font-size: 12px;
+    border-radius: 4px;
 }
 
 .weather-output {

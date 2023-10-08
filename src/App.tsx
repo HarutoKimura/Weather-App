@@ -18,7 +18,7 @@ const App: React.FC = () => {
       <div className="app-container">
         <div className="search-container">
             <input value={city} placeholder='Search for a city' onChange={(e) => setCity(e.target.value)} />
-            <button onClick={handleSubmit}>Get Weather</button>
+            <button onClick={handleSubmit} className='search-button'>Get Weather</button>
         </div>
         <div>
             {weatherData && (
